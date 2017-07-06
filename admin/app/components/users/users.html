@@ -1,0 +1,196 @@
+<div class="row">
+  <div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+      <div class="x_title">
+        <h2>{{title}}</h2>        
+        <ul class="nav navbar-right">          
+          <li>
+          	<a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+          </li>                      
+        </ul>
+        <a href="#!/users/new" class="btn btn-primary pull-right">Agregar Usuario</a>
+        <div class="clearfix"></div>
+      </div>
+      <div class="x_content">
+    
+          <table class="table table-striped">
+          	<tr>
+          		<th>Nombre</th>
+              <th>Apellido</th>
+          		<th>Acciones</th>
+          	</tr>
+          	<tr ng-repeat="u in users">
+          		<td>{{u.first_name}}</td>
+              <td>{{u.last_name}}</td>
+          		<td>
+                <a href="#!/users/edit/{{u.Id}}" class="btn btn-success btn-xs"><i class="fa fa-pencil"></i></a>  
+                <a ng-click="delete(u.Id)" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></a>  
+              </td>
+          	</tr>
+          </table>
+      </div>
+    </div>
+  </div>
+</div>
+<!--
+<h1>LISTA DE USUARIOS</h1>
+
+<div class="x_panel">
+                  <div class="x_title">
+                    <h2> Inclusiones Asefedex </h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                        <ul class="dropdown-menu" role="menu">
+                          <li><a href="#">Settings 1</a>
+                          </li>
+                          <li><a href="#">Settings 2</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                    <br>
+                    <form id="demo-form2" data-parsley-validate="" class="form-horizontal form-label-left" novalidate="">
+x
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first_name">First Name <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="first_name" required="required" class="form-control col-md-7 col-xs-12">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last_name">Last Name <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="last_name" name="last_name" required="required" class="form-control col-md-7 col-xs-12">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="idNumberidNumber" class="control-label col-md-3 col-sm-3 col-xs-12">Numero de Asefedex </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input id="idNumber" placeholder="Asefedex#" class="form-control col-md-7 col-xs-12" type="text" name="idNumber">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="nickName">Usuario <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="nickName" required="required" class="form-control col-md-7 col-xs-12">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="password">password <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="password" required="required" class="form-control col-md-7 col-xs-12">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="in_date"> Fecha de Ingreso <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="in_date" required="required" class="form-control col-md-7 col-xs-12">
+                        </div>
+                      </div>  
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="out_date"> Fecha de Salida <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="out_date" required="required" class="form-control col-md-7 col-xs-12">
+                        </div>
+                        </div>
+
+                        <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Status</label>
+                        <div class="col-md-3 col-sm-3 col-xs-12">
+                          <div id="status" class="btn-group" data-toggle="buttons">
+                            <label class="btn btn-default" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+                              <input type="radio" name="status" value="male" data-parsley-multiple="status"> &nbsp; Asociado &nbsp;
+                            </label>
+                            <label class="btn btn-primary" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+                              <input type="radio" name="status" value="female" data-parsley-multiple="status"> No Asociado
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="profile"> Perfil de usuario <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="profile" required="required" class="form-control col-md-7 col-xs-12">
+                        </div>
+                      </div>
+                      
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="position"> Posicion <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="position" required="required" class="form-control col-md-7 col-xs-12">
+                        </div>
+                      </div>
+                      
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="civil_status"> Estado Civil <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="civil_status" required="required" class="form-control col-md-7 col-xs-12">
+                        </div>
+                      </div>
+
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="emp_id"> Numero de empleado <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="emp_id" required="required" class="form-control col-md-7 col-xs-12">
+                        </div>
+                      </div>  
+                      
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="email"> Correo electronico <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="email" placeholder="ejemplo@hxxx.com" required="required" class="form-control col-md-7 col-xs-12">
+                        </div>
+                      </div> 
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="phone"> Telefono <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="phone" required="required" class="form-control col-md-7 col-xs-12">
+                        </div>
+                      </div> 
+                    
+                      
+                      <div class="ln_solid"></div>
+                      <div class="form-group">
+                        <div class="col-md-12 col-sm-6 col-xs-6  col-md-offset-3">
+                          <button class="btn btn-primary" type="button">Cancel</button>
+                          <button class="btn btn-primary" type="reset">Reset</button>
+                          <button type="submit" class="btn btn-success">Submit</button>
+                        </div>
+                      </div>
+
+                    </form>
+                  </div>
+                </div>
+                -->

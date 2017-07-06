@@ -1,0 +1,94 @@
+<div class="row">
+  <div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+      <div class="x_title">
+        <h2>{{title}}</h2>        
+        <ul class="nav navbar-right">          
+          <li>
+          	<a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+          </li>                      
+        </ul>
+        <div class="clearfix"></div>
+      </div>
+      <div class="x_content">
+          
+                    <form id="demo-form2" data-parsley-validate="" class="form-horizontal form-label-left" novalidate="">
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first_name">Nombre: <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="first_name" ng-model="user.firstName" required="required" class="form-control col-md-7 col-xs-12">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last_name">Apellido: <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="last_name" ng-model="user.lastName" name="last_name" required="required" class="form-control col-md-7 col-xs-12">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="idNumberidNumber" class="control-label col-md-3 col-sm-3 col-xs-12">Numero de Cedula </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input id="idNumber" ng-model="user.idNumber" class="form-control col-md-7 col-xs-12" type="text" name="idNumber">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="password"> Contraseña <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="password" ng-model="user.password" required="required" class="form-control col-md-7 col-xs-12">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="inDate"> Fecha de Ingreso <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="inDate" ng-model="user.inDate" required="required" class="form-control col-md-7 col-xs-12">
+                        </div>
+                      </div>  
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="profile"> Perfil de usuario <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="profile" ng-model ="user.profile" required="required" class="form-control col-md-7 col-xs-12">
+                        </div>
+                      </div>
+
+                          
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="email"> Correo electronico <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="email" placeholder="ejemplo@hxxx.com" required="required" class="form-control col-md-7 col-xs-12">
+                        </div>
+                      </div> 
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="phone"> Telefono <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="phone" ng-model="user.phone" required="required" class="form-control col-md-7 col-xs-12">
+                        </div>
+                      </div> 
+                    
+                      
+                      <div class="ln_solid"></div>
+                      <div class="form-group">
+                        <div class="col-md-12 col-sm-6 col-xs-6  col-md-offset-3">
+                          <button type="submit" class="btn btn-success" ng-click="saveUser()">Cargar</button>
+
+                      </div>
+
+                    </form>          
+
+      </div>
+    </div>
+  </div>
+</div>
+
